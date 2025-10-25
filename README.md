@@ -57,9 +57,9 @@ Multiple parameterized and randomized sequences were created to ensure exhaustiv
 
 ## 👥 Project Team
 
-Saeed Maher Saeed
-Sameh Mohammed Sameh 
-Hazem Ahmed Mohamed Elsheshtawy
+-Saeed Maher Saeed
+-Sameh Mohammed Sameh 
+-Hazem Ahmed Mohamed Elsheshtawy
 
 ---
 
