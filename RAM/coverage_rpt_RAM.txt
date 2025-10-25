@@ -1,0 +1,2276 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /RAM_top/RAM_if
+=== Design Unit: work.RAM_interface
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         62        62         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RAM_top/RAM_if --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                          din[9-0]           1           1      100.00 
+                                         dout[7-0]           1           1      100.00 
+                                  dout_golden[7-0]           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                          rx_valid           1           1      100.00 
+                                          tx_valid           1           1      100.00 
+                                   tx_valid_golden           1           1      100.00 
+
+Total Node Count     =         31 
+Toggled Node Count   =         31 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (62 of 62 bins)
+
+=================================================================================
+=== Instance: /RAM_top/DUT/assertion_mod
+=== Design Unit: work.RAM_SVA
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       7         7         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/RAM_top/DUT/assertion_mod/assert__read_data_eventually_after_address
+                     RAM_assertions.sv(63)              0          1
+/RAM_top/DUT/assertion_mod/assert__write_data_eventually_after_address
+                     RAM_assertions.sv(55)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_on_seq
+                     RAM_assertions.sv(47)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_off_seq_of_read_add
+                     RAM_assertions.sv(39)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_off_seq_of_wrtie_data
+                     RAM_assertions.sv(31)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_off_seq_of_wrtie_add
+                     RAM_assertions.sv(23)              0          1
+/RAM_top/DUT/assertion_mod/assert__sync_reset
+                     RAM_assertions.sv(15)              0          1
+
+Directive Coverage:
+    Directives                       7         7         0   100.00%
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/RAM_top/DUT/assertion_mod/cover__read_data_eventually_after_address 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(64)
+                                                                              6458 Covered   
+/RAM_top/DUT/assertion_mod/cover__write_data_eventually_after_address 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(56)
+                                                                              9737 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_on_seq 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(48)
+                                                                              6406 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_off_seq_of_read_add 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(40)
+                                                                              6458 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_off_seq_of_wrtie_data 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(32)
+                                                                              5046 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_off_seq_of_wrtie_add 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(24)
+                                                                              9853 Covered   
+/RAM_top/DUT/assertion_mod/cover__sync_reset 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(16)
+                                                                               329 Covered   
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         44        44         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RAM_top/DUT/assertion_mod --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+                                          din[0-9]           1           1      100.00 
+                                         dout[0-7]           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                          rx_valid           1           1      100.00 
+                                          tx_valid           1           1      100.00 
+
+Total Node Count     =         22 
+Toggled Node Count   =         22 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (44 of 44 bins)
+
+=================================================================================
+=== Instance: /RAM_top/DUT
+=== Design Unit: work.RAM
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         8         8         0   100.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_top/DUT
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM.v
+------------------------------------IF Branch------------------------------------
+    14                                     30001     Count coming in to IF
+    14              1                        329         if (~rst_n) begin
+    20              1                      29672         else begin                                          
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    21                                     29672     Count coming in to IF
+    21              1                      28165             if (rx_valid) begin
+                                            1507     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    22                                     28165     Count coming in to CASE
+    23              1                       9955                     2'b00 : Wr_Addr <= din[7:0];
+    24              1                       5105                     2'b01 : MEM[Wr_Addr] <= din[7:0];
+    25              1                       6541                     2'b10 : Rd_Addr <= din[7:0];
+    26              1                       6564                     2'b11 : dout <= MEM[Rd_Addr];
+Branch totals: 4 hits of 4 branches = 100.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      2         2         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /RAM_top/DUT --
+
+  File RAM.v
+----------------Focused Expression View-----------------
+Line       29 Item    1  (din[9] && din[8])
+Expression totals: 2 of 2 input terms covered = 100.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      din[9]         Y
+      din[8]         Y
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          1  din[9]_0              -                             
+  Row   2:          1  din[9]_1              din[8]                        
+  Row   3:          1  din[8]_0              din[9]                        
+  Row   4:          1  din[8]_1              din[9]                        
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      10        10         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_top/DUT --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM.v
+    1                                                module RAM (din,clk,rst_n,rx_valid,dout,tx_valid);
+    2                                                
+    3                                                input [9:0] din;
+    4                                                input clk, rst_n, rx_valid;
+    5                                                
+    6                                                output reg [7:0] dout;
+    7                                                output reg tx_valid;
+    8                                                
+    9                                                reg [7:0] MEM [255:0];
+    10                                               
+    11                                               reg [7:0] Rd_Addr, Wr_Addr;
+    12                                               
+    13              1                      30001     always @(posedge clk) begin
+    14                                                   if (~rst_n) begin
+    15              1                        329             dout <= 0;
+    16              1                        329             tx_valid <= 0;
+    17              1                        329             Rd_Addr <= 0;
+    18              1                        329             Wr_Addr <= 0;
+    19                                                   end
+    20                                                   else begin                                          
+    21                                                       if (rx_valid) begin
+    22                                                           case (din[9:8])
+    23              1                       9955                     2'b00 : Wr_Addr <= din[7:0];
+    24              1                       5105                     2'b01 : MEM[Wr_Addr] <= din[7:0];
+    25              1                       6541                     2'b10 : Rd_Addr <= din[7:0];
+    26              1                       6564                     2'b11 : dout <= MEM[Rd_Addr];
+    27                                                               default : dout <= 0;
+    28                                                           endcase
+    29              1                      28165                 tx_valid <= (din[9] && din[8])? 1'b1 : 1'b0;
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         76        76         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RAM_top/DUT --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                      Rd_Addr[7-0]           1           1      100.00 
+                                      Wr_Addr[7-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                          din[0-9]           1           1      100.00 
+                                         dout[7-0]           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                          rx_valid           1           1      100.00 
+                                          tx_valid           1           1      100.00 
+
+Total Node Count     =         38 
+Toggled Node Count   =         38 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (76 of 76 bins)
+
+=================================================================================
+=== Instance: /RAM_top/golden
+=== Design Unit: work.RAM_golden
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         9         8         1    88.88%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_top/golden
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_golden.sv
+------------------------------------IF Branch------------------------------------
+    13                                     30001     Count coming in to IF
+    13              1                        329         if(!rst_n) begin
+    19              1                      29672         else begin
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                     29672     Count coming in to IF
+    20              1                      28165             if(rx_valid) begin
+                                            1507     All False Count
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------CASE Branch------------------------------------
+    21                                     28165     Count coming in to CASE
+    22              1                       9955                     2'b00: begin 
+    26              1                       5105                     2'b01: begin
+    30              1                       6541                     2'b10: begin
+    34              1                       6564                     2'b11: begin
+                                         ***0***     All False Count
+Branch totals: 4 hits of 5 branches = 80.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      13        13         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_top/golden --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_golden.sv
+    1                                                module RAM_golden(clk,rst_n,rx_valid,din,tx_valid,dout);
+    2                                                parameter MEM_DEPTH = 256; 
+    3                                                parameter ADDR_SIZE = 8;
+    4                                                input clk,rst_n,rx_valid;
+    5                                                input [9:0] din;
+    6                                                output reg tx_valid;
+    7                                                output reg [7:0] dout; 
+    8                                                reg [ADDR_SIZE-1:0]ADD_read,ADD_write;
+    9                                                reg [7:0] mem [MEM_DEPTH-1:0];
+    10                                               
+    11              1                      30001     always@(posedge clk)
+    12                                               begin
+    13                                                   if(!rst_n) begin
+    14              1                        329             tx_valid<=0;
+    15              1                        329             dout<=0;   
+    16              1                        329             ADD_read <= 0;
+    17              1                        329             ADD_write <= 0;
+    18                                                   end
+    19                                                   else begin
+    20                                                       if(rx_valid) begin
+    21                                                           case (din[9:8])
+    22                                                               2'b00: begin 
+    23              1                       9955                         tx_valid<=0;
+    24              1                       9955                         ADD_write<=din[7:0];
+    25                                                               end
+    26                                                               2'b01: begin
+    27              1                       5105                         tx_valid<=0;
+    28              1                       5105                         mem[ADD_write]<=din[7:0];
+    29                                                               end
+    30                                                               2'b10: begin
+    31              1                       6541                         tx_valid<=0; 
+    32              1                       6541                         ADD_read<=din[7:0];
+    33                                                               end
+    34                                                               2'b11: begin
+    35              1                       6564                         tx_valid<=1;
+    36              1                       6564                         dout<=mem[ADD_read];
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         76        76         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RAM_top/golden --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                     ADD_read[7-0]           1           1      100.00 
+                                    ADD_write[7-0]           1           1      100.00 
+                                               clk           1           1      100.00 
+                                          din[0-9]           1           1      100.00 
+                                         dout[7-0]           1           1      100.00 
+                                             rst_n           1           1      100.00 
+                                          rx_valid           1           1      100.00 
+                                          tx_valid           1           1      100.00 
+
+Total Node Count     =         38 
+Toggled Node Count   =         38 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (76 of 76 bins)
+
+=================================================================================
+=== Instance: /RAM_top
+=== Design Unit: work.RAM_top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_top.sv
+    1                                                module RAM_top();
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_test_pkg::*;
+    5                                                
+    6                                                    //clock generation
+    7                                                    bit clk;
+    8                                                    always begin
+    9               1                      60003             #10
+    10              1                      60002             clk = ~clk;
+    11                                                   end
+    12                                               
+    13                                                   //inst of if, design and golden module
+    14                                                    
+    15                                                    //if
+    16                                                    RAM_interface RAM_if(clk);
+    17                                               
+    18                                                    //design
+    19                                                    RAM DUT (
+    20                                                    .din(RAM_if.din),
+    21                                                    .clk(clk),
+    22                                                    .rst_n(RAM_if.rst_n),
+    23                                                    .rx_valid(RAM_if.rx_valid),
+    24                                                    .dout(RAM_if.dout),
+    25                                                    .tx_valid(RAM_if.tx_valid)
+    26                                                    );
+    27                                               
+    28                                                    //golden module
+    29                                                    RAM_golden golden (
+    30                                                    .din(RAM_if.din),
+    31                                                    .clk(clk),
+    32                                                    .rst_n(RAM_if.rst_n),
+    33                                                    .rx_valid(RAM_if.rx_valid),
+    34                                                    .dout(RAM_if.dout_golden),
+    35                                                    .tx_valid(RAM_if.tx_valid_golden)
+    36                                                    );
+    37                                               
+    38                                                    //virtual if to DB and run
+    39                                                    initial begin
+    40              1                          1             uvm_config_db #(virtual RAM_interface)::set(null,"","RAM_IF",RAM_if);
+    41              1                          1             run_test("RAM_test");
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          2         2         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /RAM_top --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                               clk           1           1      100.00 
+
+Total Node Count     =          1 
+Toggled Node Count   =          1 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (2 of 2 bins)
+
+=================================================================================
+=== Instance: /RAM_seq_item_pkg
+=== Design Unit: work.RAM_seq_item_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        18        10         8    55.55%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_seq_item_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_seq_item.sv
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               1                    ***0***         `uvm_object_utils(RAM_seq_item)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                      30001     Count coming in to IF
+    8               2                    ***0***         `uvm_object_utils(RAM_seq_item)
+                                           30001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               3                    ***0***         `uvm_object_utils(RAM_seq_item)
+    8               4                    ***0***         `uvm_object_utils(RAM_seq_item)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                      30001     Count coming in to IF
+    8               5                    ***0***         `uvm_object_utils(RAM_seq_item)
+                                           30001     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    8                                    ***0***     Count coming in to IF
+    8               6                    ***0***         `uvm_object_utils(RAM_seq_item)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    66                                     30000     Count coming in to IF
+    66              1                      10639                 if (din[9:8] == 2'b00) write_address_done = 1;
+    67              1                      19361                 else write_address_done = 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    69                                     30000     Count coming in to IF
+    69              1                       5431                 if (din[9:8] == 2'b01) write_data_done = 1;
+    70              1                      24569                 else write_data_done = 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    73                                     30000     Count coming in to IF
+    73              1                       6965                 if (din[9:8] == 2'b10) read_address_done = 1;
+    74              1                      23035                 else read_address_done = 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+------------------------------------IF Branch------------------------------------
+    76                                     30000     Count coming in to IF
+    76              1                       6965                 if (din[9:8] == 2'b11) read_data_done = 1;
+    77              1                      23035                 else read_data_done = 0;
+Branch totals: 2 hits of 2 branches = 100.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         4         2    66.66%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_seq_item_pkg --
+
+  File RAM_seq_item.sv
+----------------Focused Condition View-------------------
+Line       8 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       8 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       66 Item    1  (this.din[9:8] == 0)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (this.din[9:8] == 0)         Y
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (this.din[9:8] == 0)_0  -                             
+  Row   2:          1  (this.din[9:8] == 0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       69 Item    1  (this.din[9:8] == 1)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (this.din[9:8] == 1)         Y
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (this.din[9:8] == 1)_0  -                             
+  Row   2:          1  (this.din[9:8] == 1)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       73 Item    1  (this.din[9:8] == 2)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (this.din[9:8] == 2)         Y
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (this.din[9:8] == 2)_0  -                             
+  Row   2:          1  (this.din[9:8] == 2)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       76 Item    1  (this.din[9:8] == 3)
+Condition totals: 1 of 1 input term covered = 100.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (this.din[9:8] == 3)         Y
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (this.din[9:8] == 3)_0  -                             
+  Row   2:          1  (this.din[9:8] == 3)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19        11         8    57.89%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_seq_item_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_seq_item.sv
+    1                                                package RAM_seq_item_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import shared_pkg::*;
+    5                                                
+    6                                                
+    7                                                    class RAM_seq_item extends uvm_sequence_item;
+    8               1                    ***0***         `uvm_object_utils(RAM_seq_item)
+    8               2                    ***0***     
+    8               3                    ***0***     
+    8               4                    ***0***     
+    8               5                    ***0***     
+    8               6                      30001     
+    8               7                    ***0***     
+    8               8                    ***0***     
+    8               9                      30001     
+    8              10                    ***0***     
+    9                                                
+    10                                                       //inputs and output
+    11                                                       rand logic rst_n, rx_valid;
+    12                                                       rand logic [9:0] din;
+    13                                                       logic [9:0] dout;
+    14                                                       logic tx_valid;
+    15                                                       logic [9:0] dout_golden;
+    16                                                       logic tx_valid_golden;
+    17                                                       
+    18                                                       //constructor
+    19                                                       function new (string name = "RAM_seq_item");
+    20              1                      60008                 super.new(name);
+    21                                                       endfunction
+    22                                               
+    23                                                       //constraints
+    24                                               
+    25                                                       //reset
+    26                                                       constraint reset_rate {
+    27                                                           rst_n dist {0:=1,1:=99};
+    28                                                       }
+    29                                               
+    30                                                       constraint rx_rate {
+    31                                                           rx_valid dist {0:=5,1:=95};
+    32                                                       }
+    33                                               
+    34                                                       constraint next_op {
+    35                                                           if (write_address_done) {
+    36                                                               soft din[9] == 1'b0;
+    37                                                           }
+    38                                                           else if (read_address_done) {
+    39                                                               soft din[9:8] == 2'b11;
+    40                                                           }
+    41                                                       }
+    42                                               
+    43                                                       constraint next_read_data{
+    44                                                           if(read_data_done)
+    45                                                               din[9:8] == 2'b10;
+    46                                                       }
+    47                                               
+    48                                               
+    49                                                       constraint read_after_address {
+    50                                                           if(!read_address_done){
+    51                                                               din[9:8] != 2'b11;
+    52                                                           }
+    53                                                       }
+    54                                               
+    55                                                       constraint after_write_data {
+    56                                                           if (write_data_done) {
+    57                                                               soft din[9:8] dist {2'b10 := 60 , 2'b00 := 40};
+    58                                                           }
+    59                                                           else if (read_data_done) {
+    60                                                               soft din[9:8] dist {2'b10 := 40 , 2'b00 := 60};
+    61                                                           }
+    62                                                       }
+    63                                                
+    64                                                       function void post_randomize();
+    65                                               
+    66              1                      10639                 if (din[9:8] == 2'b00) write_address_done = 1;
+    67              1                      19361                 else write_address_done = 0;
+    68                                               
+    69              1                       5431                 if (din[9:8] == 2'b01) write_data_done = 1;
+    70              1                      24569                 else write_data_done = 0;
+    71                                               
+    72                                               
+    73              1                       6965                 if (din[9:8] == 2'b10) read_address_done = 1;
+    74              1                      23035                 else read_address_done = 0;
+    75                                               
+    76              1                       6965                 if (din[9:8] == 2'b11) read_data_done = 1;
+    77              1                      23035                 else read_data_done = 0;
+
+
+=================================================================================
+=== Instance: /RAM_write_read_seq_pkg
+=== Design Unit: work.RAM_write_read_seq_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/RAM_write_read_seq_pkg/RAM_write_read_seq/body/#ublk#161771991#21/immed__23
+                     RAM_WR_seq.sv(23)                  0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_write_read_seq_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_WR_seq.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+    7               4                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_write_read_seq_pkg --
+
+  File RAM_WR_seq.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      16         8         8    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_write_read_seq_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_WR_seq.sv
+    1                                                package RAM_write_read_seq_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                    
+    6                                                    class RAM_write_read_seq extends uvm_sequence #(RAM_seq_item);
+    7               1                    ***0***         `uvm_object_utils(RAM_write_read_seq)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                
+    9                                                        //seq item
+    10                                                       RAM_seq_item seq_item;
+    11                                               
+    12                                                       //construcotr
+    13                                                       function new(string name = "RAM_write_read_seq");
+    14              1                          1                 super.new(name);
+    15                                                       endfunction //new()
+    16                                               
+    17                                                       //body
+    18                                                       task body();
+    19              1                          1                 seq_item = RAM_seq_item::type_id::create("seq_item"); 
+    20              1                          1                 seq_item.next_read_data.constraint_mode(0);           
+    21              1                      10000                 repeat(10000) begin
+    22              1                      10000                     start_item(seq_item);
+    23                                                               assert(seq_item.randomize());
+    24              1                      10000                     finish_item(seq_item);
+
+
+=================================================================================
+=== Instance: /RAM_read_only_seq_pkg
+=== Design Unit: work.RAM_read_only_seq_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/RAM_read_only_seq_pkg/RAM_read_only_seq/body/#ublk#244104311#20/immed__22
+                     RAM_RO_seq.sv(22)                  0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_read_only_seq_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_RO_seq.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+    7               4                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_read_only_seq_pkg --
+
+  File RAM_RO_seq.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15         7         8    46.66%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_read_only_seq_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_RO_seq.sv
+    1                                                package RAM_read_only_seq_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                    
+    6                                                    class RAM_read_only_seq extends uvm_sequence #(RAM_seq_item);
+    7               1                    ***0***         `uvm_object_utils(RAM_read_only_seq)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                
+    9                                                        //seq item
+    10                                                       RAM_seq_item seq_item;
+    11                                               
+    12                                                       //construcotr
+    13                                                       function new(string name = "RAM_read_only_seq");
+    14              1                          1                 super.new(name);
+    15                                                       endfunction //new()
+    16                                               
+    17                                                       //body
+    18                                                       task body();
+    19              1                          1                 seq_item = RAM_seq_item::type_id::create("seq_item");            
+    20              1                      10000                 repeat(10000) begin
+    21              1                      10000                     start_item(seq_item);
+    22                                                               assert(seq_item.randomize() with {din[9] == 1'b1;});
+    23              1                      10000                     finish_item(seq_item);
+
+
+=================================================================================
+=== Instance: /RAM_write_only_seq_pkg
+=== Design Unit: work.RAM_write_only_seq_pkg
+=================================================================================
+
+Assertion Coverage:
+    Assertions                       1         1         0   100.00%
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/RAM_write_only_seq_pkg/RAM_write_only_seq/body/#ublk#219035351#20/immed__22
+                     RAM_WO_seq.sv(22)                  0          1
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_write_only_seq_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_WO_seq.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+    7               4                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_write_only_seq_pkg --
+
+  File RAM_WO_seq.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15         7         8    46.66%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_write_only_seq_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_WO_seq.sv
+    1                                                package RAM_write_only_seq_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                    
+    6                                                    class RAM_write_only_seq extends uvm_sequence #(RAM_seq_item);
+    7               1                    ***0***         `uvm_object_utils(RAM_write_only_seq)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                
+    9                                                        //seq item
+    10                                                       RAM_seq_item seq_item;
+    11                                               
+    12                                                       //construcotr
+    13                                                       function new(string name = "RAM_write_only_seq");
+    14              1                          1                 super.new(name);
+    15                                                       endfunction //new()
+    16                                               
+    17                                                       //body
+    18                                                       task body();
+    19              1                          1                 seq_item = RAM_seq_item::type_id::create("seq_item");            
+    20              1                      10000                 repeat(10000) begin
+    21              1                      10000                     start_item(seq_item);
+    22                                                               assert(seq_item.randomize() with {din[9] == 1'b0;});
+    23              1                      10000                     finish_item(seq_item);
+
+
+=================================================================================
+=== Instance: /RAM_reset_seq_pkg
+=== Design Unit: work.RAM_reset_seq_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         2         8    20.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_reset_seq_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_R_seq.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(RAM_reset_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(RAM_reset_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(RAM_reset_seq)
+    7               4                    ***0***         `uvm_object_utils(RAM_reset_seq)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                          1     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(RAM_reset_seq)
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(RAM_reset_seq)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_reset_seq_pkg --
+
+  File RAM_R_seq.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:          1  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      17         9         8    52.94%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_reset_seq_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_R_seq.sv
+    1                                                package RAM_reset_seq_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                    
+    6                                                    class RAM_reset_seq extends uvm_sequence #(RAM_seq_item);
+    7               1                    ***0***         `uvm_object_utils(RAM_reset_seq)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                          1     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                          1     
+    7              10                    ***0***     
+    8                                                
+    9                                                        //seq item
+    10                                                       RAM_seq_item seq_item;
+    11                                               
+    12                                                       //construcotr
+    13                                                       function new(string name = "RAM_reset_seq");
+    14              1                          1                 super.new(name);
+    15                                                       endfunction //new()
+    16                                               
+    17                                                       //body
+    18                                                       task body();
+    19              1                          1                 seq_item = RAM_seq_item::type_id::create("seq_item");
+    20              1                          1                 start_item(seq_item);
+    21              1                          1                 seq_item.rst_n = 0;
+    22              1                          1                 seq_item.din = 5;
+    23              1                          1                 seq_item.rx_valid = 0;
+    24              1                          1                 finish_item(seq_item);
+
+
+=================================================================================
+=== Instance: /RAM_scoreboard_pkg
+=== Design Unit: work.RAM_scoreboard_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         3         3    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_scoreboard_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_scorboard.sv
+------------------------------------IF Branch------------------------------------
+    42                                     30001     Count coming in to IF
+    42              1                    ***0***                     if (seq_item.dout !== seq_item.dout_golden ||
+    45              1                      30001                     end else begin
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                         1     Count coming in to IF
+    54              1                          1                 `uvm_info("repo phase",$sformatf("RAM correct times: %0d",correct_counter_ram),UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    55                                         1     Count coming in to IF
+    55              1                          1                 `uvm_info("repo phase",$sformatf("RAM error times: %0d",error_counter_ram),UVM_MEDIUM)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_scoreboard_pkg --
+
+  File RAM_scorboard.sv
+----------------Focused Condition View-------------------
+Line       42 Item    1  ((this.seq_item.dout !== this.seq_item.dout_golden) || (this.seq_item.tx_valid !== this.seq_item.tx_valid_golden))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+                                                  Input Term   Covered  Reason for no coverage   Hint
+                                                 -----------  --------  -----------------------  --------------
+          (this.seq_item.dout !== this.seq_item.dout_golden)         N  '_1' not hit             Hit '_1'
+  (this.seq_item.tx_valid !== this.seq_item.tx_valid_golden)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                                                    Non-masking condition(s)      
+ ---------  ---------  --------------------                                          -------------------------     
+  Row   1:          1  (this.seq_item.dout !== this.seq_item.dout_golden)_0          ~(this.seq_item.tx_valid !== this.seq_item.tx_valid_golden)
+  Row   2:    ***0***  (this.seq_item.dout !== this.seq_item.dout_golden)_1          -                             
+  Row   3:          1  (this.seq_item.tx_valid !== this.seq_item.tx_valid_golden)_0  ~(this.seq_item.dout !== this.seq_item.dout_golden)
+  Row   4:    ***0***  (this.seq_item.tx_valid !== this.seq_item.tx_valid_golden)_1  ~(this.seq_item.dout !== this.seq_item.dout_golden)
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19        16         3    84.21%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_scoreboard_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_scorboard.sv
+    1                                                package RAM_scoreboard_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                
+    6                                                    class RAM_scoreboard extends uvm_scoreboard;
+    7               1                    ***0***         `uvm_component_utils(RAM_scoreboard)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        //counters
+    10              1                          1             int error_counter_ram = 0;
+    11              1                          1             int correct_counter_ram = 0;
+    12                                               
+    13                                                       //seq item 
+    14                                                       RAM_seq_item seq_item;
+    15                                               
+    16                                                       //ports
+    17                                                       uvm_analysis_export #(RAM_seq_item) sb_export;
+    18                                                       uvm_tlm_analysis_fifo #(RAM_seq_item) sb_fifo;
+    19                                               
+    20                                                       //constructor
+    21                                                       function new(string name = "RAM_scoreboard", uvm_component parent = null);
+    22              1                          1                 super.new(name,parent);
+    23                                                       endfunction //new()
+    24                                               
+    25                                                       function void build_phase(uvm_phase phase);
+    26              1                          1                 super.build_phase(phase);
+    27              1                          1                 sb_export = new("sb_exprt",this);
+    28              1                          1                 sb_fifo = new("sb_fifo",this);
+    29                                                       endfunction
+    30                                               
+    31                                                       //connect
+    32                                                       function void connect_phase(uvm_phase phase);
+    33              1                          1                 super.connect_phase(phase);
+    34              1                          1                 sb_export.connect(sb_fifo.analysis_export);
+    35                                                       endfunction
+    36                                               
+    37                                                       //run 
+    38                                                       task run_phase(uvm_phase phase);
+    39              1                          1                 super.run_phase(phase);
+    40              1                          1                 forever begin
+    41              1                      30002                     sb_fifo.get(seq_item);
+    42                                                               if (seq_item.dout !== seq_item.dout_golden ||
+    43                                                                   seq_item.tx_valid !== seq_item.tx_valid_golden) begin
+    44              1                    ***0***                         error_counter_ram++;
+    45                                                               end else begin
+    46              1                      30001                         correct_counter_ram++;
+    47                                                               end
+    48                                                           end
+    49                                                       endtask
+    50                                               
+    51                                                       //report
+    52                                                       function void report_phase(uvm_phase phase);
+    53              1                          1                 super.report_phase(phase);
+    54              1                          1                 `uvm_info("repo phase",$sformatf("RAM correct times: %0d",correct_counter_ram),UVM_MEDIUM)
+    55              1                          1                 `uvm_info("repo phase",$sformatf("RAM error times: %0d",error_counter_ram),UVM_MEDIUM)
+
+
+=================================================================================
+=== Instance: /RAM_collector_pkg
+=== Design Unit: work.RAM_collector_pkg
+=================================================================================
+
+Covergroup Coverage:
+    Covergroups                      1        na        na   100.00%
+        Coverpoints/Crosses          5        na        na        na
+            Covergroup Bins         19        19         0   100.00%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /RAM_collector_pkg/RAM_collector/RAM_cvr        100.00%        100          -    Covered              
+    covered/total bins:                                    19         19          -                      
+    missing/total bins:                                     0         19          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint din_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint rx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint tx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross din_with_rx                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross din_read_with_tx                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/RAM_collector_pkg::RAM_collector::RAM_cvr  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    19         19          -                      
+    missing/total bins:                                     0         19          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint din_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write_address                               10430          1          -    Covered              
+        bin write_data                                   5363          1          -    Covered              
+        bin read_address                                 6831          1          -    Covered              
+        bin read_data                                    6824          1          -    Covered              
+        bin write_data_after_write_address               5349          1          -    Covered              
+        bin read_data_after_read_address                 6810          1          -    Covered              
+        bin full_trans                                   1124          1          -    Covered              
+    Coverpoint rx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                        27944          1          -    Covered              
+        bin low                                          1504          1          -    Covered              
+    Coverpoint tx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         6865          1          -    Covered              
+        bin low                                         22583          1          -    Covered              
+    Cross din_with_rx                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <full_trans,high>                        1078          1          -    Covered              
+            bin <read_data_after_read_address,high> 
+                                                         6499          1          -    Covered              
+            bin <write_data_after_write_address,high> 
+                                                         5076          1          -    Covered              
+            bin <read_data,high>                         6512          1          -    Covered              
+            bin <write_data,high>                        5085          1          -    Covered              
+            bin <read_address,high>                      6477          1          -    Covered              
+            bin <write_address,high>                     9870          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin low_tx                            1504                     -    Occurred             
+    Cross din_read_with_tx                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin checked                                  6520          1          -    Covered              
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_collector_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_collector.sv
+    1                                                package RAM_collector_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                import shared_pkg::*;
+    6                                                    
+    7                                                    class RAM_collector extends uvm_component;
+    8               1                    ***0***         `uvm_component_utils(RAM_collector)
+    8               2                    ***0***     
+    8               3                          2     
+    9                                                
+    10                                                       //seq item
+    11                                                       RAM_seq_item seq_item_cvr;
+    12                                                       
+    13                                                       //ports
+    14                                                       uvm_analysis_export #(RAM_seq_item) cvr_export;
+    15                                                       uvm_tlm_analysis_fifo #(RAM_seq_item) cvr_fifo;
+    16                                               
+    17                                                       //covergroups
+    18                                                       covergroup RAM_cvr;
+    19                                                           din_cp: coverpoint seq_item_cvr.din[9:8] iff(seq_item_cvr.rst_n) {
+    20                                                               bins write_address = {2'b00};
+    21                                                               bins write_data    = {2'b01};
+    22                                                               bins read_address  = {2'b10};
+    23                                                               bins read_data     = {2'b11};
+    24                                                               bins write_data_after_write_address = (2'b00 => 2'b01);
+    25                                                               bins read_data_after_read_address = (2'b10 => 2'b11);
+    26                                                               bins full_trans = (2'b00 => 2'b01 => 2'b10 => 2'b11);
+    27                                                           }
+    28                                                           rx_valid_CP: coverpoint seq_item_cvr.rx_valid iff(seq_item_cvr.rst_n) {
+    29                                                               bins high = {1};
+    30                                                               bins low = {0};
+    31                                                           }
+    32                                                           tx_valid_CP: coverpoint seq_item_cvr.tx_valid iff(seq_item_cvr.rst_n) {
+    33                                                               bins high = {1};
+    34                                                               bins low = {0};
+    35                                                           }
+    36                                               
+    37                                                           din_with_rx: cross din_cp,rx_valid_CP {
+    38                                                               ignore_bins low_tx = binsof(rx_valid_CP.low);
+    39                                                           }
+    40                                               
+    41                                                           din_read_with_tx: cross din_cp,tx_valid_CP {
+    42                                                               option.cross_auto_bin_max = 0;
+    43                                                               bins checked = binsof(din_cp.read_data) && binsof(tx_valid_CP.high);
+    44                                                           } 
+    45                                                       endgroup
+    46                                               
+    47                                                       //constructor
+    48                                                       function new(string name = "RAM_collector", uvm_component parent = null);
+    49              1                          1                 super.new(name,parent);
+    50              1                          1                 RAM_cvr = new;
+    51                                                       endfunction //new()
+    52                                               
+    53                                                       //build
+    54                                                       function void build_phase(uvm_phase phase);
+    55              1                          1                 super.build_phase(phase);
+    56              1                          1                 cvr_export = new("cvr_export",this);
+    57              1                          1                 cvr_fifo = new ("cvr_fifo",this);
+    58                                                       endfunction
+    59                                               
+    60                                                       //connect
+    61                                                       function void connect_phase(uvm_phase phase);
+    62              1                          1                 super.connect_phase(phase);
+    63              1                          1                 cvr_export.connect(cvr_fifo.analysis_export);
+    64                                                       endfunction
+    65                                               
+    66                                                       //run
+    67                                                       task run_phase(uvm_phase phase);
+    68              1                          1                 super.run_phase(phase);
+    69              1                          1                 forever begin
+    70              1                      30002                     cvr_fifo.get(seq_item_cvr);
+    71              1                      30001                     RAM_cvr.sample();
+
+
+=================================================================================
+=== Instance: /RAM_config_pkg
+=== Design Unit: work.RAM_config_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        10         0        10     0.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_config_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_config.sv
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               1                    ***0***         `uvm_object_utils(RAM_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               2                    ***0***         `uvm_object_utils(RAM_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               3                    ***0***         `uvm_object_utils(RAM_config)
+    7               4                    ***0***         `uvm_object_utils(RAM_config)
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               5                    ***0***         `uvm_object_utils(RAM_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    7                                    ***0***     Count coming in to IF
+    7               6                    ***0***         `uvm_object_utils(RAM_config)
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /RAM_config_pkg --
+
+  File RAM_config.sv
+----------------Focused Condition View-------------------
+Line       7 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       7 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         1        10     9.09%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_config_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_config.sv
+    1                                                package RAM_config_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import uvm_pkg::*;
+    5                                                
+    6                                                    class RAM_config extends uvm_object;
+    7               1                    ***0***         `uvm_object_utils(RAM_config)
+    7               2                    ***0***     
+    7               3                    ***0***     
+    7               4                    ***0***     
+    7               5                    ***0***     
+    7               6                    ***0***     
+    7               7                    ***0***     
+    7               8                    ***0***     
+    7               9                    ***0***     
+    7              10                    ***0***     
+    8                                                
+    9                                                        virtual RAM_interface RAM_vif;
+    10                                                       uvm_active_passive_enum is_active;
+    11                                               
+    12                                                       //constructor
+    13                                                       function new(string name = "RAM_config");
+    14              1                          1                 super.new(name);
+
+
+=================================================================================
+=== Instance: /RAM_monitor_pkg
+=== Design Unit: work.RAM_monitor_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      18        16         2    88.88%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_monitor_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_monitor.sv
+    1                                                package RAM_monitor_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                
+    6                                                    class RAM_monitor extends uvm_monitor;
+    7               1                    ***0***         `uvm_component_utils(RAM_monitor)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        //virtual interface
+    10                                                       virtual RAM_interface RAM_vif;
+    11                                               
+    12                                                       //seq item
+    13                                                       RAM_seq_item seq_item;
+    14                                               
+    15                                                       //analysis port
+    16                                                       uvm_analysis_port #(RAM_seq_item) mon_ap;
+    17                                               
+    18                                                       //constructor
+    19                                                       function new(string name = "RAM_monitor", uvm_component parent);
+    20              1                          1                 super.new(name,parent);
+    21                                                       endfunction //new()
+    22                                               
+    23                                                       //build
+    24                                                       function void build_phase(uvm_phase phase);
+    25              1                          1                 super.build_phase(phase);
+    26              1                          1                 mon_ap = new("mon_ap",this);
+    27                                                       endfunction
+    28                                                       
+    29                                                       //run
+    30                                                       task run_phase(uvm_phase phase);
+    31              1                          1                 super.run_phase(phase);
+    32              1                          1                 forever begin
+    33              1                      30002                     seq_item = RAM_seq_item::type_id::create("seq_item");
+    34              1                      30002                     @(negedge RAM_vif.clk);
+    35              1                      30001                     seq_item.rst_n = RAM_vif.rst_n;
+    36              1                      30001                     seq_item.rx_valid = RAM_vif.rx_valid;
+    37              1                      30001                     seq_item.din = RAM_vif.din;
+    38              1                      30001                     seq_item.dout = RAM_vif.dout;
+    39              1                      30001                     seq_item.tx_valid = RAM_vif.tx_valid;
+    40                                                               //golden outputs
+    41              1                      30001                     seq_item.tx_valid_golden = RAM_vif.tx_valid_golden;
+    42              1                      30001                     seq_item.dout_golden = RAM_vif.dout_golden;
+    43                                                               //broadcast
+    44              1                      30001                     mon_ap.write(seq_item);
+
+
+=================================================================================
+=== Instance: /RAM_driver_pkg
+=== Design Unit: work.RAM_driver_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      14        12         2    85.71%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_driver_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_driver.sv
+    1                                                package RAM_driver_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                //import RAM_config_pkg::*;
+    6                                                import shared_pkg::*;
+    7                                                
+    8                                                    class RAM_driver extends uvm_driver #(RAM_seq_item);
+    9               1                    ***0***         `uvm_component_utils (RAM_driver)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       //virtual interface
+    12                                                       virtual RAM_interface RAM_vif;
+    13                                               
+    14                                                       //seq item
+    15                                                       RAM_seq_item seq_item;
+    16                                               
+    17                                                       //constructor
+    18                                                       function new(string name = "RAM_driver", uvm_component parent = null);
+    19              1                          1                 super.new(name,parent);
+    20                                                       endfunction //new()
+    21                                               
+    22                                                       //build phase
+    23                                                       function void build_phase(uvm_phase phase);
+    24              1                          1                 super.build_phase(phase);
+    25                                                       endfunction
+    26                                               
+    27                                                       //run
+    28                                                       task run_phase(uvm_phase phase);
+    29              1                          1                 super.run_phase(phase);
+    30              1                          1                 forever begin
+    31              1                      30002                     seq_item = RAM_seq_item::type_id::create("seq_item");
+    32              1                      30002                     seq_item_port.get_next_item(seq_item);
+    33              1                      30001                     RAM_vif.rst_n = seq_item.rst_n;
+    34              1                      30001                     RAM_vif.din = seq_item.din;
+    35              1                      30001                     RAM_vif.rx_valid = seq_item.rx_valid;
+    36              1                      30001                     @(negedge RAM_vif.clk);
+    37              1                      30001                     seq_item_port.item_done();
+
+
+=================================================================================
+=== Instance: /RAM_sqr_pkg
+=== Design Unit: work.RAM_sqr_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         2         2    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_sqr_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_sqr.sv
+    1                                                package RAM_sqr_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_seq_item_pkg::*;
+    5                                                
+    6                                                    class RAM_sqr extends uvm_sequencer #(RAM_seq_item);
+    7               1                    ***0***         `uvm_component_utils(RAM_sqr)
+    7               2                    ***0***     
+    7               3                          2     
+    8                                                
+    9                                                        //constructor
+    10                                                       function new(string name = "RAM_sqr", uvm_component parent = null);
+    11              1                          1                 super.new(name,parent);
+
+
+=================================================================================
+=== Instance: /RAM_agent_pkg
+=== Design Unit: work.RAM_agent_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         8         3         5    37.50%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_agent_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_agent.sv
+------------------------------------IF Branch------------------------------------
+    29                                         1     Count coming in to IF
+    29              1                    ***0***                 if(!(uvm_config_db #(RAM_config)::get(this,"","CFG_RAM",agent_cfg))) begin
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                   ***0***     Count coming in to IF
+    30              1                    ***0***                    `uvm_fatal("build_phase","can not get the CFG from DB in the agent")
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    33                                         1     Count coming in to IF
+    33              1                          1                 if (agent_cfg.is_active == UVM_ACTIVE) begin
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    44                                         1     Count coming in to IF
+    44              1                          1                 if(agent_cfg.is_active == UVM_ACTIVE) begin
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      15        12         3    80.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_agent_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_agent.sv
+    1                                                package RAM_agent_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_sqr_pkg::*;
+    5                                                import RAM_driver_pkg::*;
+    6                                                import RAM_monitor_pkg::*;
+    7                                                import RAM_config_pkg::*;
+    8                                                import RAM_seq_item_pkg::*;
+    9                                                
+    10                                                   class RAM_agent extends uvm_agent;
+    11              1                    ***0***         `uvm_component_utils(RAM_agent)
+    11              2                    ***0***     
+    11              3                          2     
+    12                                               
+    13                                                       //define handles
+    14                                                       RAM_driver agent_driv;
+    15                                                       RAM_sqr agent_sqr;
+    16                                                       RAM_monitor agent_mon;
+    17                                                       RAM_config agent_cfg;
+    18                                                       uvm_analysis_port #(RAM_seq_item) agent_ap;
+    19                                               
+    20                                                       //constructor
+    21                                                       function new(string name = "RAM_agent", uvm_component parent = null);
+    22              1                          1                 super.new(name,parent);
+    23                                                       endfunction //new()
+    24                                               
+    25                                                       //build phase
+    26                                                       function void build_phase(uvm_phase phase);
+    27              1                          1                 super.build_phase(phase);
+    28                                                           //get config pointer to handler
+    29                                                           if(!(uvm_config_db #(RAM_config)::get(this,"","CFG_RAM",agent_cfg))) begin
+    30              1                    ***0***                    `uvm_fatal("build_phase","can not get the CFG from DB in the agent")
+    31                                                           end
+    32                                                           //build blocks
+    33                                                           if (agent_cfg.is_active == UVM_ACTIVE) begin
+    34              1                          1                     agent_driv=RAM_driver::type_id::create("agent_driv",this);
+    35              1                          1                     agent_sqr=RAM_sqr::type_id::create("agent_sqr",this);
+    36                                                           end
+    37              1                          1                 agent_mon=RAM_monitor::type_id::create("agent_mon",this);
+    38              1                          1                 agent_ap=new("agent_ap",this);
+    39                                                       endfunction
+    40                                               
+    41                                                       //connect phase
+    42                                                       function void connect_phase(uvm_phase phase);
+    43              1                          1                 super.connect_phase(phase);
+    44                                                           if(agent_cfg.is_active == UVM_ACTIVE) begin
+    45              1                          1                     agent_driv.seq_item_port.connect(agent_sqr.seq_item_export);
+    46              1                          1                     agent_driv.RAM_vif = agent_cfg.RAM_vif;
+    47                                                           end
+    48              1                          1                 agent_mon.RAM_vif = agent_cfg.RAM_vif;
+    49              1                          1                 agent_mon.mon_ap.connect(agent_ap);
+
+
+=================================================================================
+=== Instance: /RAM_env_pkg
+=== Design Unit: work.RAM_env_pkg
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      11         9         2    81.81%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_env_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_env.sv
+    1                                                package RAM_env_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_agent_pkg::*;
+    5                                                import RAM_collector_pkg::*;
+    6                                                import RAM_scoreboard_pkg::*;
+    7                                                
+    8                                                    class RAM_env extends uvm_env;
+    9               1                    ***0***         `uvm_component_utils(RAM_env)
+    9               2                    ***0***     
+    9               3                          2     
+    10                                               
+    11                                                       //hadles
+    12                                                       RAM_agent ag;
+    13                                                       RAM_collector cvr;
+    14                                                       RAM_scoreboard sb;
+    15                                               
+    16                                                       //constructor
+    17                                                       function new(string name = "RAM_env", uvm_component parent = null);
+    18              1                          1                 super.new(name,parent);
+    19                                                       endfunction 
+    20                                               
+    21                                                       //build
+    22                                                       function void build_phase(uvm_phase phase);
+    23              1                          1                 super.build_phase(phase);
+    24              1                          1                 ag = RAM_agent::type_id::create("ag",this);
+    25              1                          1                 cvr = RAM_collector::type_id::create("cvr",this);
+    26              1                          1                 sb = RAM_scoreboard::type_id::create("sb",this);
+    27                                                       endfunction
+    28                                               
+    29                                                       //connect
+    30                                                       function void connect_phase(uvm_phase phase);
+    31              1                          1                 super.connect_phase(phase);
+    32              1                          1                 ag.agent_ap.connect(cvr.cvr_export);
+    33              1                          1                 ag.agent_ap.connect(sb.sb_export);
+
+
+=================================================================================
+=== Instance: /RAM_test_pkg
+=== Design Unit: work.RAM_test_pkg
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        20         9        11    45.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /RAM_test_pkg
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_test.sv
+------------------------------------IF Branch------------------------------------
+    38                                         1     Count coming in to IF
+    38              1                    ***0***                 if(!(uvm_config_db #(virtual RAM_interface)::get(this,"","RAM_IF",test_cfg.RAM_vif))) begin
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    39                                   ***0***     Count coming in to IF
+    39              1                    ***0***                     `uvm_fatal("build phase","unable to get ALSU interface from DB in test class");
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    51                                         1     Count coming in to IF
+    51              1                          1                 `uvm_info("run phase","reset asserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    53                                         1     Count coming in to IF
+    53              1                          1                 `uvm_info("run phase","reset deasserted",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    54                                         1     Count coming in to IF
+    54              1                          1                 `uvm_info("run phase","stimulas generation started of write only seq",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    56                                         1     Count coming in to IF
+    56              1                          1                 `uvm_info("run phase","stimulas generation ended of write only seq",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    57                                         1     Count coming in to IF
+    57              1                          1                 `uvm_info("run phase","stimulas generation started of read only seq",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    59                                         1     Count coming in to IF
+    59              1                          1                 `uvm_info("run phase","stimulas generation ended of read only seq",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                         1     Count coming in to IF
+    60              1                          1                 `uvm_info("run phase","stimulas generation started of read-write seq",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    62                                         1     Count coming in to IF
+    62              1                          1                 `uvm_info("run phase","stimulas generation ended of read-write seq",UVM_LOW)
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      29        26         3    89.65%
+
+================================Statement Details================================
+
+Statement Coverage for instance /RAM_test_pkg --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File RAM_test.sv
+    1                                                package RAM_test_pkg;
+    2                                                import uvm_pkg::*;
+    3                                                `include "uvm_macros.svh"
+    4                                                import RAM_env_pkg::*;
+    5                                                import RAM_reset_seq_pkg::*;
+    6                                                import RAM_write_only_seq_pkg::*;
+    7                                                import RAM_read_only_seq_pkg::*;
+    8                                                import RAM_write_read_seq_pkg::*;
+    9                                                import RAM_config_pkg::*;
+    10                                               
+    11                                                   class RAM_test extends uvm_test;
+    12              1                    ***0***         `uvm_component_utils(RAM_test)
+    12              2                    ***0***     
+    12              3                          4     
+    13                                               
+    14                                                       //handles
+    15                                                       RAM_env RAM_ENV;
+    16                                                       RAM_reset_seq R_seq;
+    17                                                       RAM_write_only_seq Wr_seq;
+    18                                                       RAM_read_only_seq Rd_seq;
+    19                                                       RAM_write_read_seq WR_seq;
+    20                                                       RAM_config test_cfg;
+    21                                                       virtual RAM_interface RAM_vif;
+    22                                               
+    23                                                       //constructor
+    24                                                       function new(string name = "RAM_test", uvm_component parent = null);
+    25              1                          1                  super.new(name,parent);
+    26                                                       endfunction
+    27                                               
+    28                                                       //build
+    29                                                       function void build_phase(uvm_phase phase);
+    30              1                          1                 super.build_phase(phase);
+    31              1                          1                 RAM_ENV = RAM_env::type_id::create("RAM_env",this);
+    32              1                          1                 R_seq = RAM_reset_seq::type_id::create("R_seq");
+    33              1                          1                 Wr_seq = RAM_write_only_seq::type_id::create("Wr_seq");
+    34              1                          1                 Rd_seq = RAM_read_only_seq::type_id::create("Rd_seq");
+    35              1                          1                 WR_seq = RAM_write_read_seq::type_id::create("WR_seq");
+    36              1                          1                 test_cfg = RAM_config::type_id::create("test_cfg");
+    37                                                           //get the virtual interface from db
+    38                                                           if(!(uvm_config_db #(virtual RAM_interface)::get(this,"","RAM_IF",test_cfg.RAM_vif))) begin
+    39              1                    ***0***                     `uvm_fatal("build phase","unable to get ALSU interface from DB in test class");
+    40                                                           end
+    41                                                           //intialize is active var
+    42              1                          1                 test_cfg.is_active = UVM_ACTIVE;
+    43                                                           //SET cfg to the db
+    44              1                          1                 uvm_config_db #(RAM_config)::set(this,"RAM_env*","CFG_RAM",test_cfg);
+    45                                                       endfunction
+    46                                               
+    47                                                       //run
+    48                                                       task run_phase(uvm_phase phase);
+    49              1                          1                 super.run_phase(phase);
+    50              1                          1                 phase.raise_objection(this);
+    51              1                          1                 `uvm_info("run phase","reset asserted",UVM_LOW)
+    52              1                          1                 R_seq.start(RAM_ENV.ag.agent_sqr);
+    53              1                          1                 `uvm_info("run phase","reset deasserted",UVM_LOW)
+    54              1                          1                 `uvm_info("run phase","stimulas generation started of write only seq",UVM_LOW)
+    55              1                          1                 Wr_seq.start(RAM_ENV.ag.agent_sqr);
+    56              1                          1                 `uvm_info("run phase","stimulas generation ended of write only seq",UVM_LOW)
+    57              1                          1                 `uvm_info("run phase","stimulas generation started of read only seq",UVM_LOW)
+    58              1                          1                 Rd_seq.start(RAM_ENV.ag.agent_sqr);
+    59              1                          1                 `uvm_info("run phase","stimulas generation ended of read only seq",UVM_LOW)
+    60              1                          1                 `uvm_info("run phase","stimulas generation started of read-write seq",UVM_LOW)
+    61              1                          1                 WR_seq.start(RAM_ENV.ag.agent_sqr);
+    62              1                          1                 `uvm_info("run phase","stimulas generation ended of read-write seq",UVM_LOW)
+    63              1                          1                 phase.drop_objection(this);
+
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /RAM_collector_pkg/RAM_collector/RAM_cvr        100.00%        100          -    Covered              
+    covered/total bins:                                    19         19          -                      
+    missing/total bins:                                     0         19          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint din_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint rx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Coverpoint tx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross din_with_rx                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+    Cross din_read_with_tx                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+ Covergroup instance \/RAM_collector_pkg::RAM_collector::RAM_cvr  
+                                                      100.00%        100          -    Covered              
+    covered/total bins:                                    19         19          -                      
+    missing/total bins:                                     0         19          -                      
+    % Hit:                                            100.00%        100          -                      
+    Coverpoint din_cp                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin write_address                               10430          1          -    Covered              
+        bin write_data                                   5363          1          -    Covered              
+        bin read_address                                 6831          1          -    Covered              
+        bin read_data                                    6824          1          -    Covered              
+        bin write_data_after_write_address               5349          1          -    Covered              
+        bin read_data_after_read_address                 6810          1          -    Covered              
+        bin full_trans                                   1124          1          -    Covered              
+    Coverpoint rx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                        27944          1          -    Covered              
+        bin low                                          1504          1          -    Covered              
+    Coverpoint tx_valid_CP                            100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin high                                         6865          1          -    Covered              
+        bin low                                         22583          1          -    Covered              
+    Cross din_with_rx                                 100.00%        100          -    Covered              
+        covered/total bins:                                 7          7          -                      
+        missing/total bins:                                 0          7          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <full_trans,high>                        1078          1          -    Covered              
+            bin <read_data_after_read_address,high> 
+                                                         6499          1          -    Covered              
+            bin <write_data_after_write_address,high> 
+                                                         5076          1          -    Covered              
+            bin <read_data,high>                         6512          1          -    Covered              
+            bin <write_data,high>                        5085          1          -    Covered              
+            bin <read_address,high>                      6477          1          -    Covered              
+            bin <write_address,high>                     9870          1          -    Covered              
+        Illegal and Ignore Bins:
+            ignore_bin low_tx                            1504                     -    Occurred             
+    Cross din_read_with_tx                            100.00%        100          -    Covered              
+        covered/total bins:                                 1          1          -                      
+        missing/total bins:                                 0          1          -                      
+        % Hit:                                        100.00%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin checked                                  6520          1          -    Covered              
+
+TOTAL COVERGROUP COVERAGE: 100.00%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+--------------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line)      Hits Status    
+                                         Unit   UnitType                                     
+--------------------------------------------------------------------------------------------
+/RAM_top/DUT/assertion_mod/cover__read_data_eventually_after_address 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(64)
+                                                                              6458 Covered   
+/RAM_top/DUT/assertion_mod/cover__write_data_eventually_after_address 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(56)
+                                                                              9737 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_on_seq 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(48)
+                                                                              6406 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_off_seq_of_read_add 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(40)
+                                                                              6458 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_off_seq_of_wrtie_data 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(32)
+                                                                              5046 Covered   
+/RAM_top/DUT/assertion_mod/cover__tx_valid_off_seq_of_wrtie_add 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(24)
+                                                                              9853 Covered   
+/RAM_top/DUT/assertion_mod/cover__sync_reset 
+                                         RAM_SVA Verilog  SVA  RAM_assertions.sv(16)
+                                                                               329 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.00%  COVERS: 7
+
+ASSERTION RESULTS:
+--------------------------------------------------------------------
+Name                 File(Line)                   Failure      Pass 
+                                                  Count        Count
+--------------------------------------------------------------------
+/RAM_top/DUT/assertion_mod/assert__read_data_eventually_after_address
+                     RAM_assertions.sv(63)              0          1
+/RAM_top/DUT/assertion_mod/assert__write_data_eventually_after_address
+                     RAM_assertions.sv(55)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_on_seq
+                     RAM_assertions.sv(47)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_off_seq_of_read_add
+                     RAM_assertions.sv(39)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_off_seq_of_wrtie_data
+                     RAM_assertions.sv(31)              0          1
+/RAM_top/DUT/assertion_mod/assert__tx_valid_off_seq_of_wrtie_add
+                     RAM_assertions.sv(23)              0          1
+/RAM_top/DUT/assertion_mod/assert__sync_reset
+                     RAM_assertions.sv(15)              0          1
+/RAM_write_read_seq_pkg/RAM_write_read_seq/body/#ublk#161771991#21/immed__23
+                     RAM_WR_seq.sv(23)                  0          1
+/RAM_read_only_seq_pkg/RAM_read_only_seq/body/#ublk#244104311#20/immed__22
+                     RAM_RO_seq.sv(22)                  0          1
+/RAM_write_only_seq_pkg/RAM_write_only_seq/body/#ublk#219035351#20/immed__22
+                     RAM_WO_seq.sv(22)                  0          1
+
+Total Coverage By Instance (filtered view): 79.39%
+
